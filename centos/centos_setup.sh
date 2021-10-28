@@ -1,5 +1,4 @@
-# vnpy_setup: https://www.vnpy.com/forum/topic/1337-centos7-6-da-jian-vnpyliang-hua-jiao-yi-huan-jing
-# proxy_setup: https://snapcraft.io/install/clash/centos
+# /bin/sh
 
 # update
 yum update -y
@@ -29,6 +28,8 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
 echo "
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -44,8 +45,8 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
-
 echo "set-option -g default-shell /bin/zsh" >> ~/.tmux.conf
+
 
 # zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -65,14 +66,3 @@ alias tl='tmux ls'
 # make directories
 mkdir ~/downloads
 mkdir ~/repos
-
-
-# echo 'Port=60223' >> /etc/ssh/sshd_config
-# systemctl restart sshd
-# firewall-cmd --zone=public --add-port=60223/tcp --permanent
-# firewall-cmd --reload
-# iptables-save | grep 55555
-# lsof -i -P |grep http
-
-# 233boy
-# bash <(curl -s -L https://git.io/v2ray.sh)
