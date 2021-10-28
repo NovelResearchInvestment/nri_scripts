@@ -1,7 +1,7 @@
 # @Author: Gabrielvon
 # @Date:   2021-07-29 08:43:00
 # @Last Modified by:   Gabrielvon
-# @Last Modified time: 2021-08-30 12:37:56
+# @Last Modified time: 2021-10-23 18:56:08
 
 
 # # Attpemt 1
@@ -62,5 +62,6 @@ echo "alias dkv='docker volume'" >> ~/.zshrc
 # docker run -it -d -e TZ=Asia/Shanghai -w /root/ --name test centos/vnpy:latest /bin/bash
 # docker run -it -d -e TZ=Asia/Shanghai -w /root/ --name test centos/vnpy:latest /bin/bash
 docker run -p 127.0.0.1:80:8050/tcp -it -d -e TZ=Asia/Shanghai -w /root/ --name test centos/vnpy:latest /bin/bash
+# docker run -it -d -e TZ=Asia/Shanghai -w /root/ --name test centos-gab /bin/bash
 
 

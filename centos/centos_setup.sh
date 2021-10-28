@@ -5,9 +5,9 @@
 yum update -y
 yum upgrade -y
 yum install -y vim git curl wget tree zsh tmux jq
-yum -y install epel-release
-yum -y install htop
-yum group install -y "Development Tools"
+# yum -y install epel-release
+# yum -y install htop
+# yum group install -y "Development Tools"
 
 # change time zone
 timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
