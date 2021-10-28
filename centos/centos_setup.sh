@@ -54,18 +54,17 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 sed -in 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions z extract history)/g' ~/.zshrc
 
 # make alias
-echo "alias tn='tmux new -s'" >> ~/.zshrc
-echo "alias tt='tmux a -t'" >> ~/.zshrc
-echo "alias tk='tmux kill-session -t'" >> ~/.zshrc
-echo "alias tl='tmux ls'" >> ~/.zshrc
+echo "
+alias tn='tmux new -s'
+alias tt='tmux a -t'
+alias tk='tmux kill-session -t'
+alias tl='tmux ls'
+" >> ~/.zshrc
 
 
 # make directories
 mkdir ~/downloads
 mkdir ~/repos
-
-source ~/.zshrc
-
 
 
 # echo 'Port=60223' >> /etc/ssh/sshd_config

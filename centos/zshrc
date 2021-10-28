@@ -103,7 +103,6 @@ alias tn='tmux new -s'
 alias tt='tmux a -t'
 alias tk='tmux kill-session -t'
 alias tl='tmux ls'
-alias cct='conda activate cct'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
