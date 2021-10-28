@@ -3,7 +3,7 @@ apt-get update -y && apt-get upgrade -y
 apt update -y & apt upgrade -y
 apt-get install -y vim git curl wget htop tree zsh tmux proxychains tor autossh tor pip jq timeshift
 apt-get install -y build-essential gcc python3-dev openssl zip automake make libevent-dev
-
+rm -rf /var/lib/apt/lists
 # change time zone
 timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
 
