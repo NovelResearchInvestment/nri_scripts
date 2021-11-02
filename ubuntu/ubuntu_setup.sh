@@ -1,8 +1,12 @@
+# /bin/sh
+#
 # update
 apt-get update -y && apt-get upgrade -y
 apt update -y & apt upgrade -y
-apt-get install -y vim git curl wget htop tree zsh tmux proxychains tor autossh tor pip jq timeshift
-apt-get install -y build-essential gcc python3-dev openssl zip automake make libevent-dev
+apt-get install -y vim git curl wget tree zsh tmux jq
+# apt-get install -y htop
+# apt-get install -y build-essential gcc python3-dev openssl zip automake make libevent-dev
+rm -rf /var/lib/apt/lists
 
 # change time zone
 timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
@@ -24,6 +28,8 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
 echo "
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -39,7 +45,6 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
-
 echo "set-option -g default-shell /bin/zsh" >> ~/.tmux.conf
 
 
@@ -62,29 +67,23 @@ eval $(thefuck --alias fuck) >> ~/.zshrc
 
 
 # make alias
-echo "alias tn='tmux new -s'" >> ~/.zshrc
-echo "alias tt='tmux a -t'" >> ~/.zshrc
-echo "alias tk='tmux kill-session -t'" >> ~/.zshrc
-echo "alias tl='tmux ls'" >> ~/.zshrc
+echo "
+alias tn='tmux new -s'
+alias tt='tmux a -t'
+alias tk='tmux kill-session -t'
+alias tl='tmux ls'
+" >> ~/.zshrc
 
 
 # make directories
 mkdir ~/downloads
 mkdir ~/repos
 
-source ~/.zshrc
 
+# apt-get install timeshift
 # backup full server and restore
 # https://linuxconfig.org/ubuntu-20-04-system-backup-and-restore
 # sudo timeshift --create
 # sudo timeshift --list
 # sudo timeshift --restore --snapshot "2020-02-19_18-32-36"
 # sudo timeshift --delete  --snapshot '2014-10-12_16-29-08'
-
-
-#
-# echo 'Port=60223' >> /etc/ssh/sshd_config
-# service sshd restart
-
-# 233boy
-# bash <(curl -s -L https://git.io/v2ray.sh)

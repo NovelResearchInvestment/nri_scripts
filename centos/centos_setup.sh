@@ -1,13 +1,12 @@
-# vnpy_setup: https://www.vnpy.com/forum/topic/1337-centos7-6-da-jian-vnpyliang-hua-jiao-yi-huan-jing
-# proxy_setup: https://snapcraft.io/install/clash/centos
+# /bin/sh
 
 # update
 yum update -y
 yum upgrade -y
 yum install -y vim git curl wget tree zsh tmux jq
-yum -y install epel-release
-yum -y install htop
-yum group install -y "Development Tools"
+# yum -y install epel-release
+# yum -y install htop
+# yum group install -y "Development Tools"
 
 # change time zone
 timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
@@ -29,6 +28,8 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
 echo "
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -44,8 +45,8 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
-
 echo "set-option -g default-shell /bin/zsh" >> ~/.tmux.conf
+
 
 # zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -54,26 +55,14 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 sed -in 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions z extract history)/g' ~/.zshrc
 
 # make alias
-echo "alias tn='tmux new -s'" >> ~/.zshrc
-echo "alias tt='tmux a -t'" >> ~/.zshrc
-echo "alias tk='tmux kill-session -t'" >> ~/.zshrc
-echo "alias tl='tmux ls'" >> ~/.zshrc
+echo "
+alias tn='tmux new -s'
+alias tt='tmux a -t'
+alias tk='tmux kill-session -t'
+alias tl='tmux ls'
+" >> ~/.zshrc
 
 
 # make directories
 mkdir ~/downloads
 mkdir ~/repos
-
-source ~/.zshrc
-
-
-
-# echo 'Port=60223' >> /etc/ssh/sshd_config
-# systemctl restart sshd
-# firewall-cmd --zone=public --add-port=60223/tcp --permanent
-# firewall-cmd --reload
-# iptables-save | grep 55555
-# lsof -i -P |grep http
-
-# 233boy
-# bash <(curl -s -L https://git.io/v2ray.sh)
