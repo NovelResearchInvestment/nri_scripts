@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  ubuntu-dev:
+    build:
+      context: './ubuntu-dev'
+      dockerfile: Dockerfile
+    container_name: ubuntu-dev
+    working_dir: /root
+    tty: true
+    extra_hosts:
+      - "raw.githubusercontent.com:199.232.28.133"
+    command: ["/bin/sh"]
