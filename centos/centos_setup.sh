@@ -4,10 +4,10 @@
  # @Date: 2021-10-28 20:15:13
  # @LastEditTime: 2021-11-22 16:45:18
  # @LastEditors: Gabriel Feng
- # @Description: 
+ # @Description:
  # @FilePath: /nri_scripts/centos/centos_setup.sh
  # -------------------------------------------------------------------------------
-### 
+###
 
 # update
 yum update -y
@@ -38,7 +38,7 @@ ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
+curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
 echo "
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
