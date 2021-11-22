@@ -1,4 +1,13 @@
 # /bin/sh
+###
+ # @Author: Gabriel Feng
+ # @Date: 2021-10-28 20:15:13
+ # @LastEditTime: 2021-11-22 16:45:18
+ # @LastEditors: Gabriel Feng
+ # @Description: 
+ # @FilePath: /nri_scripts/centos/centos_setup.sh
+ # -------------------------------------------------------------------------------
+### 
 
 # update
 yum update -y
@@ -22,7 +31,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # echo "Plugin 'Chiel92/vim-autoformat'" >> ~/.vimrc
 
 #install tmux
-y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  &&
+printf 'yyy' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  &&
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
