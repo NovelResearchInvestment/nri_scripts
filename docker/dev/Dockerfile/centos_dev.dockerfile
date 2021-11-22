@@ -8,4 +8,7 @@ LABEL maintainer="gabrielwfeng@gmail.com"
 EXPOSE 80 443 7890
 RUN mkdir -p /root/scripts/init_env
 WORKDIR /root/scripts/init_env
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/centos_setup.sh)"
+RUN yum update -y  && yum upgrade -y && yum install -y \
+    curl \
+    vim \
+    && sh -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/centos_setup.sh)"
