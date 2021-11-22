@@ -1,4 +1,13 @@
 # /bin/sh
+###
+ # @Author: Gabriel Feng
+ # @Date: 2021-10-28 20:15:13
+ # @LastEditTime: 2021-11-22 15:53:29
+ # @LastEditors: Gabriel Feng
+ # @Description: 
+ # @FilePath: /nri_scripts/ubuntu/ubuntu_setup.sh
+ # -------------------------------------------------------------------------------
+### 
 #
 # update
 apt-get update -y && apt-get upgrade -y
@@ -22,14 +31,15 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # echo "Plugin 'Chiel92/vim-autoformat'" >> ~/.vimrc
 
 #install tmux
-y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+printf 'yyy' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
+# wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
+curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
 echo "
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -56,8 +66,8 @@ sed -in 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestion
 
 # instal thefuck
 # apt-get -y install python3-dev python3-pip python3-setuptools
-y | apt-get install thefuck
-eval $(thefuck --alias fuck) >> ~/.zshrc
+# printf 'yyy' | apt-get install thefuck
+# eval $(thefuck --alias fuck) >> ~/.zshrc
 
 # # install tor
 # apt-get -y install libevent-dev libssl-dev zlib1g zlib1g-dev asciidoc
