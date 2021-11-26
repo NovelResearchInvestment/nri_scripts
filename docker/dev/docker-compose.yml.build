@@ -27,7 +27,7 @@ services:
   postgres:
     build:
       context: './Dockerfile'
-      dockerfile: postgres.dockerfile 
+      dockerfile: postgres.dockerfile
     container_name: postgres
     working_dir: /root
     tty: true
@@ -39,7 +39,7 @@ services:
   services:
     build:
       context: './Dockerfile'
-      dockerfile: services.dockerfile 
+      dockerfile: services.dockerfile
     container_name: services
     working_dir: /root
     tty: true
@@ -64,7 +64,7 @@ services:
   jupyterhub:
     build:
       context: './Dockerfile'
-      dockerfile: jupyterhub.dockerfile 
+      dockerfile: jupyterhub.dockerfile
     container_name: jupyterhub
     working_dir: /root
     tty: true
