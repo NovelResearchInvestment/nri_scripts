@@ -3,9 +3,10 @@
 LINESWITCH=$1
 if [ $LINESWITCH = 1 ]
 then
-	# sudo route add default gw 192.168.1.2
+	sudo route add default gw 192.168.1.2
 	# ping -c 3 www.163.com
-	msg=$(ping -c 3 www.163.com &> /dev/null && echo success || echo fail)
+	msg=$(ping -c 3 www.163.com &> /dev/null && echo success || echo fail | echo $?)
+	echo msg
 	if [ $msg = 'success' ]
 	then
 		export LINESWITCH=1
@@ -15,9 +16,10 @@ then
 	fi
 elif [ $LINESWITCH = 2 ]
 then
-	# sudo route del default gw 192.168.1.2
+	sudo route del default gw 192.168.1.2
 	# ping -c 3 www.google.com.hk
-	msg=$(ping -c 3 www.google.com.hk &> /dev/null && echo success || echo fail)
+	msg=$(ping -c 3 www.google.com.hk &> /dev/null && echo success || echo fail | echo $?)
+	echo msg
 	if [ $msg = 'success' ]
 	then
 		export LINESWITCH=2
@@ -25,6 +27,55 @@ then
 	else
 		export LINESWITCH=2
 		echo $msg "科学上网失败！"
+	fi
+else
+	echo "网关未定义，只支持1和2"
+fi
+
+
+
+
+
+
+#!/bin/sh
+
+LINESWITCH=$1
+
+testhost1="www.163.com"
+testhost2="www.google.com.hk"
+
+if [ $LINESWITCH = 1 ]
+then
+	sudo route add default gw 192.168.1.2
+	# ping -c 3 www.163.com
+	if ping -c 1 -W 1 "$testhost1" > /dev/null; then
+	  echo "$testhost1 is alive"
+	  msg = "success"
+	else
+	  echo "$testhost1 is pining for the fjords"
+	  msg = "failed"
+	fi
+
+	if [ $msg = 'success' ]
+	then
+		export LINESWITCH=1
+		echo $msg "欢迎专线上网！"
+	fi
+elif [ $LINESWITCH = 2 ]
+then
+	sudo route del default gw 192.168.1.2
+	# ping -c 3 www.google.com.hk
+	if ping -c 1 -W 1 "$testhost2" > /dev/null; then
+	  echo "$testhost2 is alive"
+	  msg = "success"
+	else
+	  echo "$testhost2 is pining for the fjords"
+	  msg = "failed"
+	fi
+	if [ $msg = 'success' ]
+	then
+		export LINESWITCH=2
+		echo $msg "欢迎科学上网！"
 	fi
 else
 	echo "网关未定义，只支持1和2"

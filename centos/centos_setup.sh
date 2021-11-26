@@ -73,5 +73,5 @@ alias tl='tmux ls'
 
 
 # make directories
-mkdir ~/downloads
-mkdir ~/repos
+mkdir ~/Downloads
+mkdir ~/Repos

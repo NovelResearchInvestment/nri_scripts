@@ -1,5 +1,10 @@
-VNPY_FRAMEWORK_PATH=~/Repos/NRI/infrastructure/vnpy_framework
-python=/usr/local/anaconda3/envs/cct/bin/python
+
+python=$1
+VNPY_FRAMEWORK_PATH=$2
+shift 2
+
+[[ -z $python ]] && python=python
+[[ -z $VNPY_FRAMEWORK_PATH ]] && VNPY_FRAMEWORK_PATH=~/Repos/NRI/infrastructure/vnpy_framework
 
 RepoUpdateArray=(vnpy vnpy_binance vnpy_okex vnpy_huobi vnpy_deribit vnpy_postgresql vnpy_influxdb vnpy_datarecorder vnpy_rest vnpy_websocket vnpy_ctastrategy vnpy_spreadtrading)
 

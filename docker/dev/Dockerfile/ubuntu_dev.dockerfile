@@ -3,13 +3,10 @@
 # VERSION               0.1
 # DOCKER-VERSION        0.2
 
-FROM ubuntu AS raw
-LABEL maintainer="gabrielwfeng@gmail.com"
-EXPOSE 80 443 7890
-# ENV http_proxy=localhost:7890
-# ENV https_proxy=localhost:7890
-RUN mkdir -p /root/scripts/init_env
-WORKDIR /root/scripts/init_env
+FROM ubuntu
+MAINTAINER "gabrielwfeng@gmail.com"
+LABEL ORG="NRI"
+WORKDIR /root
 RUN apt update -y  && apt upgrade -y && apt install -y \
     curl \
     vim \

@@ -4,10 +4,10 @@
  # @Date: 2021-10-28 20:15:13
  # @LastEditTime: 2021-11-22 15:53:29
  # @LastEditors: Gabriel Feng
- # @Description: 
+ # @Description:
  # @FilePath: /nri_scripts/ubuntu/ubuntu_setup.sh
  # -------------------------------------------------------------------------------
-### 
+###
 #
 # update
 apt-get update -y && apt-get upgrade -y
@@ -86,8 +86,8 @@ alias tl='tmux ls'
 
 
 # make directories
-mkdir ~/downloads
-mkdir ~/repos
+mkdir ~/Downloads
+mkdir ~/Repos
 
 
 # apt-get install timeshift
