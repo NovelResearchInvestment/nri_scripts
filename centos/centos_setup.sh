@@ -2,10 +2,10 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-11-22 16:45:18
+ # @LastEditTime: 2021-12-15 07:54:09
  # @LastEditors: Gabriel Feng
  # @Description:
- # @FilePath: /nri_scripts/centos/centos_setup.sh
+ # @FilePath: \NRI\apps\nri_scripts\centos\centos_setup.sh
  # -------------------------------------------------------------------------------
 ###
 
@@ -18,6 +18,7 @@ yum install -y vim git curl wget tree zsh tmux jq
 # yum group install -y "Development Tools"
 
 # change time zone
+export TZ=Asia/Shanghai
 timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
 
 # install vim
@@ -31,6 +32,8 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # echo "Plugin 'Chiel92/vim-autoformat'" >> ~/.vimrc
 
 #install tmux
+https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/centos_conda_setup.sh
+
 printf 'yyy' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  &&
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
@@ -45,6 +48,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -75,3 +79,5 @@ alias tl='tmux ls'
 # make directories
 mkdir ~/Downloads
 mkdir ~/Repos
+
+yum clean all

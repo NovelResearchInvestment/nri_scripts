@@ -2,10 +2,10 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-11-22 15:53:29
+ # @LastEditTime: 2021-12-15 07:54:21
  # @LastEditors: Gabriel Feng
  # @Description:
- # @FilePath: /nri_scripts/ubuntu/ubuntu_setup.sh
+ # @FilePath: \NRI\apps\nri_scripts\ubuntu\ubuntu_setup.sh
  # -------------------------------------------------------------------------------
 ###
 #
@@ -46,6 +46,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
