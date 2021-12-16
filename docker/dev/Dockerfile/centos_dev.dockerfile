@@ -1,13 +1,12 @@
 # Dev Env on CentOS
 #
-# VERSION               0.1
-# DOCKER-VERSION        0.2
 
 FROM centos:latest
-MAINTAINER "gabrielwfeng@gmail.com"
+LABEL maintainer="gabrielwfeng@gmail.com"
 LABEL ORG="NRI"
+ENV TZ=Asia/Shanghai
 WORKDIR /root
-RUN yum update -y && yum upgrade -y && yum install -y \
-    curl \
-    vim \
-    && sh -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/centos_setup.sh)"
+RUN yum update -y && yum upgrade -y && yum install curl -y \
+    && bash -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/centos_setup.sh)" \
+    && yum clean all \
+    && rm -rf /var/cache/yum
