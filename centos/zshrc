@@ -70,7 +70,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions z extract history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,20 +105,6 @@ alias tt='tmux a -t'
 alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/root/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/root/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/root/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/root/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 alias dk='docker'
 alias dka='docker attach'
@@ -126,5 +113,5 @@ alias dki='docker image'
 alias dkv='docker volume'
 alias lsd='/usr/local/bin/lazydocker'
 alias lzd='lazydocker'
-alias acmon='/root/miniconda3/envs/cct/bin/python $CRYPTOPATH/stablecoin_account_manager.py'
+
 export HISTTIMEFORMAT="%d/%m/%y %T "

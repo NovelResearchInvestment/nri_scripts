@@ -2,7 +2,7 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-12-15 07:54:09
+ # @LastEditTime: 2021-12-16 10:48:36
  # @LastEditors: Gabriel Feng
  # @Description:
  # @FilePath: \NRI\apps\nri_scripts\centos\centos_setup.sh
@@ -12,7 +12,7 @@
 # update
 yum update -y
 yum upgrade -y
-yum install -y vim git curl wget tree zsh tmux jq
+yum install -y vim curl wget tree zsh tmux
 # yum -y install epel-release
 # yum -y install htop
 # yum group install -y "Development Tools"
@@ -32,8 +32,6 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 # echo "Plugin 'Chiel92/vim-autoformat'" >> ~/.vimrc
 
 #install tmux
-https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/centos_conda_setup.sh
-
 printf 'yyy' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  &&
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
@@ -41,40 +39,12 @@ ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
-echo "
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @plugin 'tmux-plugins/tmux-yank'
-
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'github_username/plugin_name#branch'
-# set -g @plugin 'git@github.com:user/plugin'
-# set -g @plugin 'git@bitbucket.com:user/plugin'
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
-echo "set-option -g default-shell /bin/zsh" >> ~/.tmux.conf
-
+curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/centos/tmux.conf > ~/.tmux.conf
 
 # zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-sed -in 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions z extract history)/g' ~/.zshrc
-
-# make alias
-echo "
-alias tn='tmux new -s'
-alias tt='tmux a -t'
-alias tk='tmux kill-session -t'
-alias tl='tmux ls'
-" >> ~/.zshrc
-
 
 # make directories
 mkdir ~/Downloads
