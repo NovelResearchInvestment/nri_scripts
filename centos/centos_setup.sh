@@ -2,7 +2,7 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-12-16 10:48:36
+ # @LastEditTime: 2021-12-16 12:24:13
  # @LastEditors: Gabriel Feng
  # @Description:
  # @FilePath: \NRI\apps\nri_scripts\centos\centos_setup.sh
@@ -12,7 +12,7 @@
 # update
 yum update -y
 yum upgrade -y
-yum install -y vim curl wget tree zsh tmux
+yum install -y vim curl git wget tree zsh tmux
 # yum -y install epel-release
 # yum -y install htop
 # yum group install -y "Development Tools"
