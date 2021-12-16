@@ -2,7 +2,7 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-12-16 13:13:50
+ # @LastEditTime: 2021-12-16 13:45:59
  # @LastEditors: Gabriel Feng
  # @Description:
  # @FilePath: \NRI\apps\nri_scripts\centos\centos_setup.sh
@@ -18,8 +18,8 @@ yum install -y vim curl git wget tree zsh tmux
 # yum group install -y "Development Tools"
 
 # change time zone
-export TZ=Asia/Shanghai
-timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
+# export TZ=Asia/Shanghai
+# timedatectl set-timezone $(timedatectl list-timezones | grep -i Asia/Shanghai)
 
 # # install awesome vim
 # git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
