@@ -1,13 +1,16 @@
 # Dev Env on Ubuntu
-#
-# VERSION               0.1
-# DOCKER-VERSION        0.2
+
 
 FROM ubuntu
 LABEL maintainer="gabrielwfeng@gmail.com"
 LABEL ORG="NRI"
-ENV TZ=Asia/Shanghai
+USER root
 WORKDIR /root
-RUN apt update -y  && apt upgrade -y && apt install -y \
+ENV TZ=Asia/Shanghai
+RUN apt-get update -qq && apt-get upgrade -y \
+    && apt-get install -y -qq --no-install-recommends \
     curl \
-    && sh -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/ubuntu/ubuntu_setup.sh)"
+    && sh -c "$(curl -fsSL https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/ubuntu/ubuntu_setup.sh)" \
+    && apt-get autoremove -y -qq \
+    && apt-get clean -qq
+CMD [ "/bin/zsh" ]

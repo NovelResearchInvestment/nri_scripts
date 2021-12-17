@@ -2,9 +2,7 @@
 
 # update
 apt-get update -y && apt-get upgrade -y
-apt update -y & apt upgrade -y
 apt-get install -y vim git curl wget tree zsh tmux jq
-rm -rf /var/lib/apt/lists
 
 #install tmux
 printf 'yyy' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -23,9 +21,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 # make directories
-mkdir ~/Downloads
-mkdir ~/Repos
+mkdir -p ~/Downloads
+mkdir -p ~/Repos
 
 # clean up
 apt-get autoremove -y -qq
 apt-get clean -qq
+rm -rf /var/lib/apt/lists
