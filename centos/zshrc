@@ -106,12 +106,13 @@ alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 
 
-alias dk='docker'
-alias dka='docker attach'
-alias dkc='docker container'
-alias dki='docker image'
-alias dkv='docker volume'
-alias lsd='/usr/local/bin/lazydocker'
-alias lzd='lazydocker'
+alias dk='sudo docker'
+alias dka='sudo docker attach'
+alias dkc='sudo docker container'
+alias dki='sudo docker image'
+alias dkn='sudo docker network'
+alias dkv='sudo docker volume'
+alias lsd='sudo /usr/local/bin/lazydocker'
+alias lzd='sudo lazydocker'
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
