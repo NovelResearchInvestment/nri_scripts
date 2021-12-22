@@ -2,7 +2,7 @@
 ###
  # @Author: Gabriel Feng
  # @Date: 2021-11-26 13:54:47
- # @LastEditTime: 2021-12-19 14:01:42
+ # @LastEditTime: 2021-12-22 21:30:23
  # @LastEditors: Gabriel Feng
  # @Description: 
  # @FilePath: \NRI\apps\nri_scripts\ubuntu\ubuntu_setup.sh
@@ -13,10 +13,11 @@ set -e
 # update
 apt-get update -y
 apt-get upgrade -y
-apt-get install -y vim git curl wget tree zsh tmux jq
+apt-get install -y vim curl git wget tree zsh tmux
 
 # oh-my-zsh
 printf 'yyy' | bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/configs/.zshrc > ~/.zshrc
 
 #install tmux
 cd ~
@@ -26,7 +27,7 @@ cp ~/.tmux/.tmux.conf.local .tmux.conf.local
 git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # wget -cO https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
-curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/main/centos/tmux.conf > ~/.tmux.conf
+curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/configs/tmux.conf > ~/.tmux.conf
 
 # zsh
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

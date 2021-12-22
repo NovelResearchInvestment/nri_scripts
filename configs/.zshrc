@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -105,14 +105,12 @@ alias tt='tmux a -t'
 alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 
-
 alias dk='sudo docker'
 alias dka='sudo docker attach'
 alias dkc='sudo docker container'
 alias dki='sudo docker image'
 alias dkn='sudo docker network'
 alias dkv='sudo docker volume'
-alias lsd='sudo /usr/local/bin/lazydocker'
 alias lzd='sudo lazydocker'
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
