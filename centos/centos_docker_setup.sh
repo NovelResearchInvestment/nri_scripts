@@ -53,6 +53,8 @@ echo "alias dka='docker attach'" >> ~/.zshrc
 echo "alias dkc='docker container'" >> ~/.zshrc
 echo "alias dki='docker image'" >> ~/.zshrc
 echo "alias dkv='docker volume'" >> ~/.zshrc
+echo "alias dn='docker network'" >> ~/.zshrc
+echo "alias dn='docker network'" >> ~/.zshrc
 
 # # create and start
 # docker create --name=test centos
