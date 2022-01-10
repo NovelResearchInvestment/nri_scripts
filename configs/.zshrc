@@ -114,3 +114,4 @@ alias dkv='sudo docker volume'
 alias lzd='sudo lazydocker'
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export TZ=Asia/Shanghai
