@@ -20,7 +20,7 @@ printf 'yyy' | bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyruss
 curl https://raw.githubusercontent.com/NovelResearchInvestment/nri_scripts/dev/configs/.zshrc > ~/.zshrc
 
 #install tmux
-cd ~
+cd ~    
 git clone --depth=1 https://github.com/gpakosz/.tmux.git
 ln -s -f ~/.tmux/.tmux.conf
 cp ~/.tmux/.tmux.conf.local .tmux.conf.local
@@ -35,8 +35,6 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 # make directories
-mkdir -p ~/Downloads
-mkdir -p ~/Repos
 
 # clean up
 apt-get autoremove -y -qq
