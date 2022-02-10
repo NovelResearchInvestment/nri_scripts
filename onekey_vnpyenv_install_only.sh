@@ -52,18 +52,19 @@ for repo_name in ${ReposArray[*]}; do
     if [ -d $filepath ]; then
         echo "$filepath exists."
     else
-        echo "git cloning $repo_name to $filepath"
-        git clone --branch nri https://github.com/NovelResearchInvestment/$repo_name.git $filepath &&
-        echo "$repo_name cloned."
+        # echo "git cloning $repo_name to $filepath"
+        # git clone --branch nri https://github.com/NovelResearchInvestment/$repo_name.git $filepath &&
+        # echo "$repo_name cloned."
 
-        echo "git remote add in [https://github.com/vnpy/$repo_name.git] to $filepath..."
-        git -C $filepath remote add vnpy "https://github.com/vnpy/$repo_name.git"  
+        # echo "git remote add in [https://github.com/vnpy/$repo_name.git] to $filepath..."
+        # git -C $filepath remote add vnpy "https://github.com/vnpy/$repo_name.git"  
 
-        echo "git pull $filepath..."
-        git -C $filepath pull &&    
-        echo "$repo_name pulled." 
-
+        # echo "git pull $filepath..."
+        # git -C $filepath pull &&
+        # echo "$repo_name pulled." 
+        echo "clone/pull suppressed."
     fi
+
     echo "pip install $filepath..."
     $python -m pip install $filepath/. -U --use-feature=in-tree-build
     echo "$repo_name installed/updated." 
