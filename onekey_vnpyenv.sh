@@ -1,16 +1,11 @@
 #!/bin/bash
-###
- # @Author: Gabriel Feng
- # @Date: 2021-11-30 19:18:25
- # @LastEditTime: 2021-12-07 09:36:54
- # @LastEditors: Gabriel Feng
- # @Description: 
- # @FilePath: \NRI\apps\nri_scripts\onekey_vnpyenv.sh
- # -------------------------------------------------------------------------------
-### 
+
+# update repo from remote and install
+
+
 set -e
 
-# Example: bash onekey_vnpyenv.sh -py $(which python) -vnpath ~/Repos/NRI/infrastructure/vnpy_framework -repos "vnpy_binance vnpy_okex" 
+# Example: bash onekey_vnpyenv.sh -py $(which python) -vnpath ~/Repos/NRI/infras/vnpy_framework -repos "vnpy_binance vnpy_okex" 
 
 python=python
 VNPY_FRAMEWORK_PATH=~/Repos/NRI/infrastructure/vnpy_framework
