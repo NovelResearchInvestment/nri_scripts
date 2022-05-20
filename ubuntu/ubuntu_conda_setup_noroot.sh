@@ -1,14 +1,4 @@
-# /bin/bash
-###
- # @Author: Gabriel Feng
- # @Date: 2021-11-26 13:54:47
- # @LastEditTime: 2022-01-07 16:59:11
- # @LastEditors: Gabriel Feng
- # @Description: 
- # @FilePath: \NRI\apps\nri_scripts\ubuntu\ubuntu_conda_setup.sh
- # -------------------------------------------------------------------------------
-### 
-
+#!/bin/bash
 
 CONDA_PREFIX=$HOME/conda
 mkdir -p $CONDA_PREFIX

@@ -1,13 +1,4 @@
-# /bin/sh
-###
- # @Author: Gabriel Feng
- # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2022-01-06 17:32:03
- # @LastEditors: Gabriel Feng
- # @Description:
- # @FilePath: \NRI\apps\nri_scripts\ubuntu\ubuntu_setup_noroot.sh
- # -------------------------------------------------------------------------------
-###
+#!/bin/bash
 #
 
 # clean up

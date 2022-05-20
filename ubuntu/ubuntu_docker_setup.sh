@@ -1,13 +1,4 @@
-# /bin/sh
-###
- # @Author: Gabriel Feng
- # @Date: 2021-10-28 20:15:13
- # @LastEditTime: 2021-11-29 13:34:09
- # @LastEditors: Gabriel Feng
- # @Description:
- # @FilePath: \NRI\apps\nri_scripts\ubuntu\ubuntu_docker_setup.sh
- # -------------------------------------------------------------------------------
-###
+#!/bin/bash
 
 # update
 sudo apt-get update -y
@@ -28,7 +19,7 @@ echo \
 sudo apt-get install -y docker.io
 
 
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | zsh
 
 
 # make alias

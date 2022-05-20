@@ -1,9 +1,11 @@
+#!/bin/bash
+
 set -e
 
 # update
-apt-get update -y
-apt-get upgrade -y
-apt-get install -y vim curl git wget tree zsh tmux
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y vim curl git wget tree zsh tmux
 
 # oh-my-zsh
 printf 'yyy' | bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -27,6 +29,6 @@ git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/cu
 # make directories
 
 # clean up
-apt-get autoremove -y -qq
-apt-get clean -qq
+sudo apt-get autoremove -y -qq
+sudo apt-get clean -qq
 rm -rf /var/lib/apt/lists
